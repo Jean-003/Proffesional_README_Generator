@@ -1,25 +1,104 @@
-const fs = require("fs");
-const path = require('path');
-const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const inquirer = require('inquirer');
+const fs = require('fs');
 
-// array of questions for user
-const questions = [
+ // Function to write README.md file
 
-];
+ const generateMD = (answers) => `
+ 
+ # Title
+ ${answers.title}
+ 
+ ## Description
+ ${answers.description}
+ 
+ ## Table of Contents
+ ${answers.contents.map(item => `- ${item}`).join('\n')}
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
+ ## Usage 
+ ${answers.usage}
 
-// function to initialize program
-function init() {
+ ## Installation
+ ${answers.installation}
 
-    function init() {
-        inquirer.prompt([put the questions in here]).then(answers);
-    }
+     
+ ## Contributing
+ ${answers.contribution}
+ 
+ ## Tests
+ ${answers.tests}
+ 
+ ## Licence
+ ${answers.license}
+ 
+ ## Questions
+GitHub Username: ${answers.questions}
 
-}
+## Email Address: 
+${answers.email}
+`;
 
-// function call to initialize program
-init();
+ // Array of questions for user
+
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'title',
+      message: 'What is the title of the project?',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is the description of the project?',
+    },
+    {
+        type: 'checkbox',
+          message: 'What should be included in the table of contents?',
+          name: 'contents',
+          choices: ['installation', 'usage', 'licence', 'contributing', 'tests', 'questions'], 
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'What are the installation instructions?',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'What is the usage information?',
+    },
+    {
+        type: 'input',
+        name: 'contribution',
+        message: 'What are the contribution guidelines?',
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'What are the tests instructions?',
+    },
+    {
+        type: 'checkbox',
+          message: 'Which license is the application covered under?',
+          name: 'licence',
+          choices: ['Apache License 2.0', 'MIT Licence', 'Boost Software Licence', 'Eclipse Public Licence 2.0', 'GNU General Public Licence v2.0', 'Creative Commons Zero v1.0 Universal', 'Mozilla Public License 2.0', 'The Unlicense'], 
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'What is your GitHub username?',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+    },
+
+  ])
+  .then((data) => {
+    const filename = 'output/README.md';
+    let READMEstring = generateMD(data);
+    fs.writeFile(filename, READMEstring, (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+  });
