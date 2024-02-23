@@ -55,7 +55,31 @@ inquirer
         type: 'checkbox',
           message: 'What should be included in the table of contents?',
           name: 'contents',
-          choices: ['installation', 'usage', 'licence', 'contributing', 'tests', 'questions'], 
+          choices: [{
+          name: 'Installation',
+          value: 'installation',
+        },
+        {
+          name: 'Usage',
+          value: 'usage',
+        },
+        {
+          name: 'Licence',
+          value: 'licence',
+        },
+        {
+          name: 'Contributing',
+          value: 'contributing',
+        },
+        {
+          name: 'Tests',
+          value: 'tests',
+        },
+        {
+          name: 'Questions',
+          value: 'questions',
+        },
+      ], 
     },
     {
         type: 'input',

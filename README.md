@@ -14,7 +14,7 @@ node index.js
 
 *****
 
-### The URL of the GitHub repository that contains the code:</h3>
+### The URL of the GitHub repository that contains the code:
 
 https://github.com/Jean-003/Proffesional_README_Generator
 
