@@ -12,7 +12,7 @@ node index.js
 
 ### The URL of the walkthrough video that demonstrates the application's functionality:
 
-*****
+https://drive.google.com/file/d/1Ny_tPG37AIn8fnobOGrtFpVznShCiEC2/view?usp=sharing
 
 ### The URL of the GitHub repository that contains the code:
 
@@ -45,7 +45,7 @@ node index.js
 
 Next, the user will be prompted to enter an answer to the first question shown below:
 
-#### What is the title of the project?
+_What is the title of the project?_
 
 Upon entering an answer, a series of 9 more questions requesting the user to enter their responses follows.
 
