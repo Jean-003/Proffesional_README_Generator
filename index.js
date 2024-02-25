@@ -46,7 +46,7 @@ const fs = require('fs');
  ${answers.tests}
  
  ## Licence
- ${answers.license}
+ ${answers.licence}
  
  ## Questions
 GitHub Username: 
@@ -122,9 +122,9 @@ inquirer
     },
     {
         type: 'checkbox',
-          message: 'Which license is the application covered under?',
+          message: 'Which licence is the application covered under?',
           name: 'licence',
-          choices: ['Apache License 2.0', 'MIT Licence', 'Boost Software Licence', 'Eclipse Public Licence 2.0', 'GNU General Public Licence v2.0', 'Creative Commons Zero v1.0 Universal', 'Mozilla Public License 2.0', 'The Unlicense'], 
+          choices: ['Apache Licence 2.0', 'MIT Licence', 'Boost Software Licence', 'Eclipse Public Licence 2.0', 'GNU General Public Licence v2.0', 'Creative Commons Zero v1.0 Universal', 'Mozilla Public License 2.0', 'The Unlicense'], 
     },
     {
         type: 'input',
