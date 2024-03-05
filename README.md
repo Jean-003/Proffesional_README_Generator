@@ -1,8 +1,6 @@
-# Title 
+# Proffessional README Generator
 
-Proffessional README Generator
-
-## Objective 
+## Project Description
 
 This project utilised JavaScript and the [Inquirer package](https://www.npmjs.com/package/inquirer) to create a command-line application that dynamically generates a comprehensive and high-quality professional README.md file from a user's input for a new project. The user is then able to invoke the application by using the folowing command:
 
@@ -26,14 +24,14 @@ Title of the project
 
 Sections entitled:
 
-Description
-Table of Contents
-Installation
-Usage
-License
-Contributing
-Tests
-Questions
+-Description
+-Table of Contents
+-Installation
+-Usage
+-License
+-Contributing
+-Tests
+-Questions
 
 
 User should run the following command in their terminal or their GitBash:
@@ -82,9 +80,6 @@ function init() {
 
 // function call to initialize program
 init();
-
-
-
 
 
 

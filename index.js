@@ -3,23 +3,37 @@ const fs = require('fs');
 
  // Function to write README.md file
 
- const generateMD = (answers) => {
-  let contents = answers.contents.map((item) => {
-      if (item === 'installation') {
-          return '- Installation';
-      } else if (item === 'usage') {
-          return '- Usage';
-      } else if (item === 'licence') {
-          return '- Licence';
-      } else if (item === 'contributing') {
-          return '- Contributing';
-      } else if (item === 'tests') {
-          return '- Tests';
-      } else if (item === 'questions') {
-          return '- Questions';
-      }
+function generateLicenceBadge(licence){
+    if(licence === 'Apache Licence 2.0'){
+        return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+    
+    }else if(licence === 'MIT Licence'){
+        return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)' 
+    
+    }else if(licence === 'Boost Software Licence'){
+        return '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)'
+    }
+    
+}
 
-  }).join('\n');
+
+ const generateMD = (answers) => {
+//   let contents = answers.contents.map((item) => {
+//       if (item === 'installation') {
+//           return '- Installation';
+//       } else if (item === 'usage') {
+//           return '- Usage';
+//       } else if (item === 'licence') {
+//           return '- Licence';
+//       } else if (item === 'contributing') {
+//           return '- Contributing';
+//       } else if (item === 'tests') {
+//           return '- Tests';
+//       } else if (item === 'questions') {
+//           return '- Questions';
+//       }
+
+//   }).join('\n');
 
   return `
 
@@ -30,15 +44,19 @@ const fs = require('fs');
  ${answers.description}
  
  ## Table of Contents
- ${answers.contents.map(item => `- ${item}`).join('\n')}
+ 1. [Installation](#installation)
+ 2. [Usage](#usage) 
+ 3. [Contributing](#contributing)
+ 4. [Tests](#tests)
+ 5. [Questions](#questions)
 
- ## Usage 
- ${answers.usage}
 
  ## Installation
  ${answers.installation}
 
-     
+ ## Usage 
+ ${answers.usage}
+ 
  ## Contributing
  ${answers.contribution}
  
@@ -46,7 +64,7 @@ const fs = require('fs');
  ${answers.tests}
  
  ## Licence
- ${answers.licence}
+ ${generateLicenceBadge(answers.licence)}
  
  ## Questions
 GitHub Username: 
@@ -71,35 +89,35 @@ inquirer
         name: 'description',
         message: 'What is the description of the project?',
     },
-    {
-        type: 'checkbox',
-          message: 'What should be included in the table of contents?',
-          name: 'contents',
-          choices: [ {
-                    name: 'Installation',
-                    value: 'installation',
-                },
-                {
-                    name: 'Usage',
-                    value: 'usage',
-                },
-                {
-                    name: 'Licence',
-                    value: 'licence',
-                },
-                {
-                    name: 'Contributing',
-                    value: 'contributing',
-                },
-                {
-                    name: 'Tests',
-                    value: 'tests',
-                },
-                {
-                    name: 'Questions',
-                    value: 'questions',
-                },], 
-    },
+    // {
+    //     type: 'list',
+    //       message: 'What should be included in the table of contents?',
+    //       name: 'contents',
+    //       choices: [ {
+    //                 name: 'Installation',
+    //                 value: 'installation',
+    //             },
+    //             {
+    //                 name: 'Usage',
+    //                 value: 'usage',
+    //             },
+    //             {
+    //                 name: 'Licence',
+    //                 value: 'licence',
+    //             },
+    //             {
+    //                 name: 'Contributing',
+    //                 value: 'contributing',
+    //             },
+    //             {
+    //                 name: 'Tests',
+    //                 value: 'tests',
+    //             },
+    //             {
+    //                 name: 'Questions',
+    //                 value: 'questions',
+    //             },], 
+    // },
     {
         type: 'input',
         name: 'installation',
@@ -121,10 +139,10 @@ inquirer
         message: 'What are the tests instructions?',
     },
     {
-        type: 'checkbox',
+        type: 'list',
           message: 'Which licence is the application covered under?',
           name: 'licence',
-          choices: ['Apache Licence 2.0', 'MIT Licence', 'Boost Software Licence', 'Eclipse Public Licence 2.0', 'GNU General Public Licence v2.0', 'Creative Commons Zero v1.0 Universal', 'Mozilla Public License 2.0', 'The Unlicense'], 
+          choices: ['Apache Licence 2.0', 'MIT Licence', 'Boost Software Licence'], 
     },
     {
         type: 'input',
