@@ -49,6 +49,12 @@ Upon entering an answer, a series of 9 more questions requesting the user to ent
 
 At the end of this, the user is alerted that a proffessional README.md file with the user's responses has been successfully generated.
 
+**Screenshot showing an example professional README.md file being generated:**
+
+
+![Screenshot 2024-03-05 205103](https://github.com/Jean-003/Proffesional_README_Generator/assets/152238337/9b1c8633-2e6d-431d-aba5-4dd05e818a04)
+
+
 ## Licences 
 
 None
