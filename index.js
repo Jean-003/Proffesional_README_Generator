@@ -16,24 +16,7 @@ function generateLicenceBadge(licence){
     
 }
 
-
  const generateMD = (answers) => {
-//   let contents = answers.contents.map((item) => {
-//       if (item === 'installation') {
-//           return '- Installation';
-//       } else if (item === 'usage') {
-//           return '- Usage';
-//       } else if (item === 'licence') {
-//           return '- Licence';
-//       } else if (item === 'contributing') {
-//           return '- Contributing';
-//       } else if (item === 'tests') {
-//           return '- Tests';
-//       } else if (item === 'questions') {
-//           return '- Questions';
-//       }
-
-//   }).join('\n');
 
   return `
 
@@ -89,35 +72,7 @@ inquirer
         name: 'description',
         message: 'What is the description of the project?',
     },
-    // {
-    //     type: 'list',
-    //       message: 'What should be included in the table of contents?',
-    //       name: 'contents',
-    //       choices: [ {
-    //                 name: 'Installation',
-    //                 value: 'installation',
-    //             },
-    //             {
-    //                 name: 'Usage',
-    //                 value: 'usage',
-    //             },
-    //             {
-    //                 name: 'Licence',
-    //                 value: 'licence',
-    //             },
-    //             {
-    //                 name: 'Contributing',
-    //                 value: 'contributing',
-    //             },
-    //             {
-    //                 name: 'Tests',
-    //                 value: 'tests',
-    //             },
-    //             {
-    //                 name: 'Questions',
-    //                 value: 'questions',
-    //             },], 
-    // },
+    
     {
         type: 'input',
         name: 'installation',
