@@ -24,14 +24,14 @@ Title of the project
 
 Sections entitled:
 
--Description
--Table of Contents
--Installation
--Usage
--License
--Contributing
--Tests
--Questions
+- Description
+- Table of Contents
+- Installation
+- Usage
+- License
+- Contributing
+- Tests
+- Questions
 
 
 User should run the following command in their terminal or their GitBash:
@@ -51,7 +51,7 @@ At the end of this, the user is alerted that a proffessional README.md file with
 
 ## Licences 
 
- None
+None
 
 ## References 
 
