@@ -34,6 +34,7 @@ function generateLicenceBadge(licence){
  5. [Questions](#questions)
 
 
+
  ## Installation
  ${answers.installation}
 
@@ -50,10 +51,10 @@ function generateLicenceBadge(licence){
  ${generateLicenceBadge(answers.licence)}
  
  ## Questions
-GitHub Username: 
+### GitHub Username 
 ${answers.questions}
 
-## Email Address: 
+### Email Address
 ${answers.email}
 `;
  };
@@ -72,7 +73,7 @@ inquirer
         name: 'description',
         message: 'What is the description of the project?',
     },
-    
+   
     {
         type: 'input',
         name: 'installation',
